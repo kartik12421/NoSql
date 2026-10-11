@@ -1,0 +1,192 @@
+Q1. What is NoSQL? Explain its main characteristics and applications.
+Answer:
+NoSQL stands for “Not Only SQL.” It is a type of database designed to store, manage, and retrieve large amounts of structured, semi-structured, and unstructured data. Unlike relational databases, NoSQL databases do not always use tables and fixed schemas.
+Main characteristics:
+1. Flexible schema: Data can be stored without a fixed table structure.
+2. Scalability: Supports horizontal scaling by adding more servers.
+3. High performance: Handles large volumes of data and requests efficiently.
+4. Distributed storage: Data can be stored across multiple machines.
+5. High availability: Many NoSQL databases provide replication and fault tolerance.
+Applications:
+- Social media platforms
+- E-commerce websites
+- Real-time applications
+- Internet of Things (IoT)
+- Big Data analytics
+Examples include MongoDB, Redis, Cassandra, and Neo4j.
+
+
+Q2. Explain the history and evolution of NoSQL databases.
+Answer:
+NoSQL databases evolved to overcome the limitations of traditional relational databases when handling massive amounts of data.
+1. 1970s: Relational databases based on tables and SQL became popular.
+2. 1990s: The growth of the internet increased the need to manage large and diverse datasets.
+3. Early 2000s: Companies such as Google and Amazon developed distributed data systems to handle massive workloads.
+4. 2006–2008: Systems such as Bigtable and Dynamo influenced modern NoSQL database development.
+5. 2009: The term “NoSQL” gained popularity among developers working with non-relational databases.
+6. Today: NoSQL databases are widely used in cloud computing, Big Data, real-time systems, and distributed applications.
+Thus, NoSQL evolved to provide flexibility, scalability, and performance for modern applications.
+
+
+Q3. Explain the four major types of NoSQL databases with suitable examples.
+Answer:
+The four major types of NoSQL databases are:
+1. Key-Value Database: Stores data as key-value pairs. Each key uniquely identifies a value. It is suitable for caching and session management. Example: Redis.
+2. Document Database: Stores data in documents, usually in JSON-like formats. It supports flexible data structures. Example: MongoDB.
+3. Column-Family Database: Stores data in rows and groups related columns into column families. It is useful for large-scale distributed applications. Example: Apache Cassandra.
+4. Graph Database: Stores data as nodes, edges, and properties to represent relationships. It is useful for social networks and recommendation systems. Example: Neo4j.
+These database types are selected according to the data structure and requirements of an application.
+
+
+Q4. Differentiate between Key-Value, Document, Column-Family, and Graph databases.
+Answer:
+Basis	Key-Value	Document	Column-Family	Graph
+Data model	Key-value pairs	Documents	Rows and column families	Nodes and edges
+Structure	Simple	Flexible	Distributed columns	Relationship-based
+Main use	Caching	Web applications	Big Data	Social networks
+Example	Redis	MongoDB	Cassandra	Neo4j
+Main advantage	Fast access by key	Flexible schema	Large-scale storage	Efficient relationship queries
+Each type is designed for different data requirements and workloads.
+
+
+Q5. Explain the importance and major advantages of relational databases.
+Answer:
+A relational database stores data in tables consisting of rows and columns. Relationships between tables are established using primary keys and foreign keys. SQL is used to manage and retrieve data.
+Importance and advantages:
+1. Data integrity: Constraints help maintain accurate and valid data.
+2. Reduced redundancy: Normalization reduces unnecessary duplication.
+3. ACID properties: Transactions support atomicity, consistency, isolation, and durability.
+4. Powerful queries: SQL supports filtering, sorting, joining, and aggregation.
+5. Security: Access controls help protect sensitive information.
+6. Reliability: Backup and recovery mechanisms help prevent data loss.
+Relational databases such as MySQL, PostgreSQL, and Oracle are widely used in banking, education, inventory, and business applications.
+
+
+Q6. What is persistent data? Explain its importance in database systems.
+Answer:
+Persistent data is information that remains stored even after a program stops running or a computer is restarted. It is generally stored on non-volatile storage devices such as SSDs and hard disks.
+Importance of persistent data:
+1. Long-term storage: Preserves information for future use.
+2. Data recovery: Helps restore information after system failures.
+3. Business continuity: Allows applications to continue using previously stored records.
+4. Historical records: Maintains transaction and activity history.
+5. Consistency: Helps ensure that committed data remains available.
+For example, when a user registers on a website, their account details are saved in a database and remain available after the website is closed.
+
+
+Q7. What is concurrency? Explain why concurrency is required in database systems.
+Answer:
+Concurrency is the ability of a database system to handle multiple transactions or operations at the same time or in overlapping periods.
+Why concurrency is required:
+1. Multiple users: Allows several users to access the database simultaneously.
+2. Better performance: Improves resource utilization and throughput.
+3. Reduced waiting time: Prevents users from waiting for every other operation to finish.
+4. Efficient processing: Supports multiple transactions in busy applications.
+5. Improved scalability: Helps databases handle increasing numbers of requests.
+Concurrency must be controlled using techniques such as locking, transaction isolation, and multiversion concurrency control (MVCC) to prevent conflicts and maintain data consistency.
+For example, multiple customers can browse an e-commerce website simultaneously while the database processes their requests.
+
+
+Q8. Explain database integration and its importance in modern applications.
+Answer:
+Database integration is the process of connecting two or more databases or data sources so that information can be shared, combined, and used by different applications.
+Importance of database integration:
+1. Data sharing: Enables different systems to exchange information.
+2. Reduced duplication: Minimizes repeated storage of the same data.
+3. Better decision-making: Combines data from different sources for analysis.
+4. Improved efficiency: Automates data exchange between applications.
+5. Consistent information: Helps maintain synchronized records across systems.
+For example, an online shopping application may integrate its customer database, inventory database, payment system, and delivery system to process an order efficiently.
+Database integration can be implemented through APIs, middleware, ETL tools, or database connectors.
+
+
+Q9. What is Impedance Mismatch? Explain with a suitable example.
+Answer:
+Impedance mismatch is the difference between the way data is represented in an application program and the way it is stored in a database. It commonly occurs when an object-oriented application works with a relational database.
+Example:
+In a Java application, a student may be represented as an object containing attributes such as student ID, name, and a list of courses. In a relational database, these details may be stored in separate tables connected through primary and foreign keys.
+The application must convert objects into database records and reconstruct objects when retrieving data. This conversion creates additional complexity.
+Ways to reduce impedance mismatch:
+1. Use Object-Relational Mapping (ORM) tools such as Hibernate.
+2. Design suitable data models.
+3. Use document databases when their data model fits the application's requirements.
+NoSQL databases can reduce certain types of mismatch, but they do not eliminate every data-mapping problem.
+
+
+Q10. Differentiate between Application Databases and Integration Databases.
+Answer:
+An application database supports the operational requirements of a particular application, while an integration database combines or consolidates data from multiple applications or sources.
+Basis	Application Database	Integration Database
+Purpose	Supports a specific application	Combines data from multiple systems
+Data sources	Usually one application	Multiple applications or databases
+Main operations	Frequent reads and writes	Data exchange and consolidation
+Design	Based on application needs	Based on shared data requirements
+Example	Database of an online shopping app	Central database combining sales and inventory data
+Application databases support day-to-day operations, whereas integration databases help different systems share and use information.
+
+
+Q11. What is meant by “Attack of the Clusters”? Explain its role in database scalability.
+Answer:
+“Attack of the Clusters” refers to the growing use of clusters of interconnected, relatively inexpensive computers instead of relying entirely on a single powerful server to handle increasing data and processing requirements.
+In database systems, clustering allows workloads and data to be distributed across multiple machines.
+Role in database scalability:
+1. Horizontal scaling: Capacity can be increased by adding more servers.
+2. Load distribution: Requests can be shared across multiple machines.
+3. Fault tolerance: Replication can help maintain availability when a server fails.
+4. Cost efficiency: Multiple commodity servers may be more economical than a single high-end machine.
+5. Large-scale processing: Supports applications handling massive amounts of data.
+For example, a distributed database such as Cassandra can distribute data across several servers to handle increasing workloads.
+
+
+Q12. Explain the major reasons behind the emergence of NoSQL databases.
+Answer:
+NoSQL databases emerged because traditional relational databases were not always suitable for the scale, flexibility, and distribution requirements of modern applications.
+Major reasons:
+1. Big Data: Increasing volumes of data required scalable storage solutions.
+2. Flexible data structures: Modern applications needed to store structured, semi-structured, and unstructured data.
+3. Horizontal scalability: Distributed systems needed to expand by adding servers.
+4. High availability: Internet applications required continuous service.
+5. High performance: Applications needed to process large numbers of requests efficiently.
+6. Cloud computing: Cloud platforms made distributed infrastructure more accessible.
+7. Rapid development: Flexible schemas helped developers adapt to changing requirements.
+Therefore, NoSQL databases became an important alternative for applications requiring flexible data models and distributed scalability.
+
+
+Q13. Differentiate between SQL and NoSQL databases on the basis of schema, scalability, data model, and performance.
+Answer:
+Basis	SQL Databases	NoSQL Databases
+Schema	Generally fixed, predefined schema	Often flexible or schema-less
+Scalability	Traditionally scales vertically; horizontal scaling is also possible	Commonly designed for horizontal scaling
+Data model	Tables with rows and columns	Key-value, document, column-family, or graph
+Performance	Efficient for relational queries and complex joins	Often efficient for workload-specific, distributed operations
+Consistency	Commonly supports strong transactional consistency	Varies by database; strong and eventual consistency are both possible
+Examples	MySQL, PostgreSQL	MongoDB, Redis, Cassandra, Neo4j
+SQL databases are often preferred for structured data and complex transactions. NoSQL databases are often preferred for flexible data models and large-scale distributed workloads. The better choice depends on the application's requirements.
+
+
+Q14. Explain how Big Data, Cloud Computing, and Distributed Systems contributed to the growth of NoSQL.
+Answer:
+Big Data, cloud computing, and distributed systems played major roles in the growth of NoSQL databases.
+1. Big Data: Modern applications generate enormous amounts of structured, semi-structured, and unstructured data. NoSQL databases provide flexible storage models and scalable data processing capabilities.
+2. Cloud Computing: Cloud platforms provide on-demand computing and storage resources. They make it easier to deploy distributed databases and increase capacity as demand grows.
+3. Distributed Systems: Distributed systems use multiple interconnected computers to store and process data. NoSQL databases often distribute data across several machines to improve scalability, availability, and fault tolerance.
+Example: A social media application can use a document database to store user profiles, a distributed database to handle large volumes of activity, and cloud infrastructure to scale as the number of users increases.
+Together, these technologies made NoSQL databases suitable for modern, large-scale applications.
+
+
+Q15. Summarize the key concepts of NoSQL databases covered in Unit I and explain their importance in modern database applications.
+Answer:
+NoSQL databases are non-relational databases designed to manage large and diverse datasets. They have become important because modern applications require flexibility, scalability, and efficient data processing.
+The key concepts covered in Unit I are:
+1. NoSQL fundamentals: Understanding the meaning, characteristics, and applications of NoSQL.
+2. History and evolution: Understanding how NoSQL developed to address the limitations of traditional database systems.
+3. Four types of NoSQL databases: Key-value, document, column-family, and graph databases.
+4. Relational databases: Understanding their importance, advantages, and transactional capabilities.
+5. Persistent data: Ensuring that information remains stored over time.
+6. Concurrency: Allowing multiple users and transactions to operate efficiently.
+7. Database integration: Enabling information exchange between different systems.
+8. Impedance mismatch: Understanding differences between application data models and database structures.
+9. Application and integration databases: Understanding their different purposes.
+10. Clustering and scalability: Distributing workloads across multiple servers.
+11. SQL versus NoSQL: Comparing schemas, data models, scalability, and performance.
+12. Big Data and cloud computing: Understanding the technologies that support modern distributed databases.
