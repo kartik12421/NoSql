@@ -1,0 +1,13 @@
+# Q7: Atomic page-view counters
+create 'WebsiteCounter', 'views'
+# Use incr to atomically increment the counter cell
+incr 'WebsiteCounter', 'PAGE#home', 'views:count', 1
+incr 'WebsiteCounter', 'PAGE#home', 'views:count', 1
+incr 'WebsiteCounter', 'PAGE#about', 'views:count', 1
+incr 'WebsiteCounter', 'PAGE#products', 'views:count', 1
+incr 'WebsiteCounter', 'PAGE#products', 'views:count', 1
+incr 'WebsiteCounter', 'PAGE#products', 'views:count', 1
+get_counter 'WebsiteCounter', 'PAGE#home', 'views:count'
+get_counter 'WebsiteCounter', 'PAGE#about', 'views:count'
+get_counter 'WebsiteCounter', 'PAGE#products', 'views:count'
+scan 'WebsiteCounter'

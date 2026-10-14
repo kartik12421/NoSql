@@ -1,0 +1,33 @@
+# Run these commands in the HBase shell
+
+create 'Students', 'personal', 'academic'
+
+put 'Students', '1', 'personal:Name', 'Amit'
+put 'Students', '1', 'personal:Course', 'BCA'
+put 'Students', '1', 'academic:Semester', '1'
+put 'Students', '1', 'academic:Marks', '85'
+
+put 'Students', '2', 'personal:Name', 'Neha'
+put 'Students', '2', 'personal:Course', 'BCA'
+put 'Students', '2', 'academic:Semester', '2'
+put 'Students', '2', 'academic:Marks', '92'
+
+put 'Students', '3', 'personal:Name', 'Rahul'
+put 'Students', '3', 'personal:Course', 'MCA'
+put 'Students', '3', 'academic:Semester', '1'
+put 'Students', '3', 'academic:Marks', '76'
+
+put 'Students', '4', 'personal:Name', 'Priya'
+put 'Students', '4', 'personal:Course', 'BCA'
+put 'Students', '4', 'academic:Semester', '3'
+put 'Students', '4', 'academic:Marks', '88'
+
+put 'Students', '5', 'personal:Name', 'Rohan'
+put 'Students', '5', 'personal:Course', 'MCA'
+put 'Students', '5', 'academic:Semester', '2'
+put 'Students', '5', 'academic:Marks', '81'
+
+get 'Students', '1'
+put 'Students', '1', 'academic:Marks', '90'
+scan 'Students'
+delete 'Students', '5'

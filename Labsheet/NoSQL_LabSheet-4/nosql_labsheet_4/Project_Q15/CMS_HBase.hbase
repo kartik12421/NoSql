@@ -1,0 +1,31 @@
+# Q15: Content Management System using HBase
+create 'CMSProject', 'content', 'author', 'metadata'
+
+# Insert records
+put 'CMSProject', 'POST#001', 'content:title', 'NoSQL Database Introduction'
+put 'CMSProject', 'POST#001', 'content:body', 'NoSQL databases support flexible data models.'
+put 'CMSProject', 'POST#001', 'author:id', 'A001'
+put 'CMSProject', 'POST#001', 'author:name', 'Vansh Bhardwaj'
+put 'CMSProject', 'POST#001', 'metadata:status', 'draft'
+put 'CMSProject', 'POST#001', 'metadata:updated_at', '2026-10-09'
+put 'CMSProject', 'POST#002', 'content:title', 'HBase Row Keys'
+put 'CMSProject', 'POST#002', 'content:body', 'A good row key supports predictable access and distribution.'
+put 'CMSProject', 'POST#002', 'author:id', 'A002'
+put 'CMSProject', 'POST#002', 'author:name', 'Diya Verma'
+put 'CMSProject', 'POST#002', 'metadata:status', 'published'
+put 'CMSProject', 'POST#002', 'metadata:updated_at', '2026-10-09'
+
+# Read / query
+get 'CMSProject', 'POST#001'
+scan 'CMSProject'
+
+# Update
+put 'CMSProject', 'POST#001', 'content:body', 'HBase is a distributed wide-column NoSQL database.'
+put 'CMSProject', 'POST#001', 'metadata:status', 'published'
+get 'CMSProject', 'POST#001'
+
+# Delete a qualifier, then delete a complete post row
+delete 'CMSProject', 'POST#002', 'content:body'
+# Uncomment the next line to delete the entire post row:
+# deleteall 'CMSProject', 'POST#002'
+scan 'CMSProject'

@@ -1,0 +1,11 @@
+# Q9: Salted row keys distribute writes across key ranges
+create 'ApplicationRecords', 'data'
+# Prefix is a small hash/salt bucket to avoid sequential hot-spotting.
+put 'ApplicationRecords', '03#USER#10001', 'data:name', 'Aarav'
+put 'ApplicationRecords', '07#USER#10002', 'data:name', 'Diya'
+put 'ApplicationRecords', '01#USER#10003', 'data:name', 'Kabir'
+put 'ApplicationRecords', '09#USER#10004', 'data:name', 'Meera'
+put 'ApplicationRecords', '04#USER#10005', 'data:name', 'Ishaan'
+scan 'ApplicationRecords'
+get 'ApplicationRecords', '07#USER#10002'
+# In a real application, calculate salt consistently from the user ID and include it in every lookup.

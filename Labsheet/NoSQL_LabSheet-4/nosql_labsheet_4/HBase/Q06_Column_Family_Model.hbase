@@ -1,0 +1,16 @@
+# Q6: Families group related qualifiers; qualifiers can vary between rows
+create 'ProductCatalog', 'product', 'inventory', 'pricing'
+put 'ProductCatalog', 'P001', 'product:name', 'Keyboard'
+put 'ProductCatalog', 'P001', 'product:brand', 'KeyPro'
+put 'ProductCatalog', 'P001', 'inventory:warehouse_a', '25'
+put 'ProductCatalog', 'P001', 'pricing:currency', 'INR'
+put 'ProductCatalog', 'P001', 'pricing:price', '799'
+put 'ProductCatalog', 'P002', 'product:name', 'Mouse'
+put 'ProductCatalog', 'P002', 'product:brand', 'ClickTech'
+put 'ProductCatalog', 'P002', 'inventory:warehouse_b', '40'
+put 'ProductCatalog', 'P002', 'inventory:warehouse_c', '15'
+put 'ProductCatalog', 'P002', 'pricing:price', '399'
+get 'ProductCatalog', 'P001'
+get 'ProductCatalog', 'P002'
+scan 'ProductCatalog'
+# Families are defined at table creation; qualifiers such as product:brand are flexible.

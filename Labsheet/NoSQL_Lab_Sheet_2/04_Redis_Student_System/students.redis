@@ -1,0 +1,15 @@
+# Run these commands in redis-cli
+
+SET student:1 "Amit"
+SET student:2 "Neha"
+SET student:3 "Rahul"
+SET student:4 "Priya"
+SET student:5 "Rohan"
+
+GET student:1
+
+SET student:1 "Amit Kumar"
+
+DEL student:5
+
+KEYS student:*

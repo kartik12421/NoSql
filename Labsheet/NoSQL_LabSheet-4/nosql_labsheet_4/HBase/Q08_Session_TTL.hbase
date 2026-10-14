@@ -1,0 +1,9 @@
+# Q8: Session table with a short TTL for demonstration (5 seconds)
+create 'UserSession', {NAME => 'session', TTL => 5}, {NAME => 'user'}
+put 'UserSession', 'SESSION#001', 'session:created_at', '2026-10-09T10:00:00Z'
+put 'UserSession', 'SESSION#001', 'session:token', 'demo-token-001'
+put 'UserSession', 'SESSION#001', 'user:user_id', 'U101'
+get 'UserSession', 'SESSION#001'
+# Wait longer than 5 seconds, then query again:
+get 'UserSession', 'SESSION#001'
+# TTL expiry is not necessarily immediately physically removed; compaction cleans expired cells.

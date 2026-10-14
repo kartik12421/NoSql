@@ -1,0 +1,10 @@
+# Q10: Pre-split regions. Start/end keys define region boundaries.
+# This creates regions split at M and T (empty start/end are open-ended).
+create 'RegionDemo', 'data', SPLITS => ['M', 'T']
+put 'RegionDemo', 'A001', 'data:value', 'Region below M'
+put 'RegionDemo', 'N001', 'data:value', 'Region M to T'
+put 'RegionDemo', 'Z001', 'data:value', 'Region T and above'
+scan 'RegionDemo'
+# Inspect region metadata in HBase shell (command availability varies by version):
+status 'detailed'
+# In a distributed cluster, RegionServers host regions and serve reads/writes; regions split as data grows.

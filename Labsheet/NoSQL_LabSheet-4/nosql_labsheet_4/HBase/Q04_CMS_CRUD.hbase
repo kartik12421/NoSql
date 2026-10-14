@@ -1,0 +1,18 @@
+# Q4: Content Management System CRUD
+create 'CMSContent', 'content', 'author', 'metadata'
+# Create/insert
+put 'CMSContent', 'POST#001', 'content:title', 'Introduction to NoSQL'
+put 'CMSContent', 'POST#001', 'content:body', 'NoSQL databases use flexible data models.'
+put 'CMSContent', 'POST#001', 'author:name', 'Vansh Bhardwaj'
+put 'CMSContent', 'POST#001', 'metadata:status', 'draft'
+put 'CMSContent', 'POST#001', 'metadata:updated_at', '2026-10-09'
+# Read
+get 'CMSContent', 'POST#001'
+# Update
+put 'CMSContent', 'POST#001', 'content:body', 'NoSQL databases support flexible data models and scale-out designs.'
+put 'CMSContent', 'POST#001', 'metadata:status', 'published'
+get 'CMSContent', 'POST#001'
+# Delete a single qualifier and then (optionally) the whole row
+delete 'CMSContent', 'POST#001', 'content:body'
+# deleteall 'CMSContent', 'POST#001'
+scan 'CMSContent'

@@ -1,0 +1,17 @@
+# Q2: Basic HBase CRUD operations
+create 'Employee', 'personal', 'job'
+put 'Employee', 'E101', 'personal:name', 'Rohan Kumar'
+put 'Employee', 'E101', 'personal:city', 'Chandigarh'
+put 'Employee', 'E101', 'job:department', 'IT'
+put 'Employee', 'E101', 'job:salary', '45000'
+# Read one row and scan the table
+get 'Employee', 'E101'
+scan 'Employee'
+# Update a cell (put overwrites the latest cell value)
+put 'Employee', 'E101', 'job:salary', '50000'
+get 'Employee', 'E101'
+# Delete one cell, then delete the complete row
+delete 'Employee', 'E101', 'personal:city'
+# deleteall removes all cells in the row
+ deleteall 'Employee', 'E101'
+scan 'Employee'
